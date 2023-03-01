@@ -3,12 +3,14 @@
 
 <head>
   <metadata charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Basic Language of Web: HTML</title>
 </head>
 
 <body>
   <!-- Things that are visible in the browser will be within <body></body> tags -->
-  <!-- Each page should only have 1 <h1></h1> tag for semantics -->
+  <!-- Each page should only have 1 <h1></h1> tag for semantics  -->
   <!-- Header is for the header and the nav (for semantics) -->
   <header>
     <h1>📘 The Code Magazine</h1>
@@ -29,11 +31,11 @@
       <!-- For semantics, we use <strong></strong> instead of <b></b> to make text bold -->
       <h2>The Basic Language of the Web: HTML</h2>
 
-      <img src="laura-jones.jpg" alt="Picture of Laura Jones" width="50" height="50" />
+      <img src="img/laura-jones.jpg" alt="Picture of Laura Jones" width="50" height="50" />
 
       <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
 
-      <img src="post-img.jpg" alt="HTML code on a screen" width="500px" height="200px" />
+      <img src="img/post-img.jpg" alt="HTML code on a screen" width="500px" height="200px" />
     </header>
 
     <!-- For semantics, use <em></em> instead of <i></i> to make text italics -->
@@ -84,6 +86,29 @@
     <p> Hopefully you learned something new here. See you next time!
     </p>
   </article>
+
+  <!-- aside: used as a secondary information of the page to complement the article -->
+  <aside>
+    <h3>Related posts</h3>
+
+    <ul>
+      <li>
+        <img src="img/related-1.jpg" alt="Person Programming" width="75" height="75" />
+        <a href="#">How to Learn Web Development</a>
+        <p>By Jonas Schmedtamnn</p>
+      </li>
+      <li>
+        <img src="img/related-2.jpg" alt="Lightning" width="75" height="75" />
+        <a href="#">The Unknown Powers of CSS</a>
+        <p>By Jim Dillon</p>
+      </li>
+      <li>
+        <img src="img/related-3.jpg" alt="JavaScript code on a screen" width="75" height="75" />
+        <a href="#">Why JavaScript is Awesome</a>
+        <p>By Matilda</p>
+      </li>
+    </ul>
+  </aside>
 
   <footer>
     Copyright &copy; 2027 by The Code
