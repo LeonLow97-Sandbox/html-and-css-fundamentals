@@ -87,3 +87,22 @@ h1 {
   <h1>My Website</h1>
 </body>
 ```
+
+## CSS Box Model
+
+- Content: Text, images, etc.
+- Border: A line around the element, still inside of the element.
+- Padding: Invisible space around the content, inside of the element. (between content and border).
+- Margin: Space outside of the element, between elements.
+- Fill area: Area that gets filled with background color or background image.
+
+## Element Height and Width Calculation
+
+- Final element width = left border + left padding + width + right padding + right border
+- Final element height = top border + top padding + height + bottom padding + bottom border
+
+## Shorthand notation
+
+- `padding: 20px 40px;`
+  - top and bottom, left and right
+- 
