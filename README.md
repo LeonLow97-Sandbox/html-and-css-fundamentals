@@ -1,3 +1,10 @@
+## Packages
+
+- Auto Rename Tag (For HTML)
+- Color Highlight (For CSS)
+- Image Preview (For HTML)
+- One Monokai Theme (For VSCode theme)
+
 ## Semantic HTML
 
 - Semantic is giving some meaning to the HTML elements.
@@ -15,3 +22,6 @@
 ## HTML Glyphs
 
 - [HTML Glyphs](https://css-tricks.com/snippets/html/glyphs/)
+
+
+
