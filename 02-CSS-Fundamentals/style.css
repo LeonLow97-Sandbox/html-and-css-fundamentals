@@ -83,3 +83,54 @@ aside {
 body {
   background-color: oldlace;
 }
+
+/* .first-li {
+  font-weight: bold;
+} */
+
+/* selects all li elements that are the first child of its parent */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* target a specific child at a specific position */
+/* li:nth-child(2) {
+  color: red
+} */
+
+/* li:nth-child(even) {
+  color: red
+} */
+
+/* Misconception: this won't work! */
+article p:first-child {
+  color: red
+}
+
+/* Styling links */
+/* target a elements with href (targeting actual links) */
+/* define in this order LVHA: link visited hover active */
+a:link {
+  color: #1089ad;
+  text-decoration: none;
+}
+
+a:visited {
+  /* color: #777; */
+  color: #1089ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
