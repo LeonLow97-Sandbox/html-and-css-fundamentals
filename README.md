@@ -52,4 +52,18 @@
   - rgb(183,183,183), #b7b7b7
   - rgb(255,255,255), #ffffff, #fff
 
+# Conflicts between Selectors
+
+- When there are multiple selectors targeting the same element, all of them are applied but which has the highest priority?
+
+```
+Highest Priority
+  1. Declarations marked !important
+  2. Inline style (style attribute in HTML)
+  3. ID (#) Selector
+  4. Class (.) or pseudo-class (:) selector
+  5. Element selector (p, div, li, etc.)
+  6. Universal selector (\*)
+Lowest Priority
+```
 
