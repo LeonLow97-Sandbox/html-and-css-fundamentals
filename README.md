@@ -67,3 +67,23 @@ Highest Priority
 Lowest Priority
 ```
 
+# How Inheritance Works?
+
+- Not all properties get inherited. It is mostly the ones **lated to text**: font-family, font-size, font-weight, font-size, ...
+
+```css
+body {
+  color: #444444;
+}
+
+/* Overrides the inherited style of #444 */
+h1 {
+  color: #1098ad;
+}
+```
+
+```html
+<body>
+  <h1>My Website</h1>
+</body>
+```
