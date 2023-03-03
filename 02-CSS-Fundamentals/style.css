@@ -16,6 +16,7 @@ body {
   background-color: #f7f7f7;
   padding: 20px 40px;
   margin-bottom: 60px;
+  height: 80px;
 }
 
 nav {
@@ -37,6 +38,7 @@ aside {
   /* padding-top: 50px;
   padding-bottom: 50px; */
   padding: 50px 0;
+  width: 500px;
 }
 
 h1,
@@ -167,6 +169,13 @@ a:hover {
 a:active {
   background-color: black;
   font-style: italic;
+}
+
+.post-img {
+  /* if width is 100%, it is 100% of the parent of this element */
+  /* percentages are useful for responsive websites */
+  width: 100%;
+  height: auto;
 }
 
 /* Resolving conflicts */

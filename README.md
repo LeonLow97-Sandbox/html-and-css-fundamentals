@@ -101,8 +101,12 @@ h1 {
 - Final element width = left border + left padding + width + right padding + right border
 - Final element height = top border + top padding + height + bottom padding + bottom border
 
-## Shorthand notation
+#### Shorthand notation
 
 - `padding: 20px 40px;`
   - top and bottom, left and right
-- 
+
+## Collapsing Margins
+
+- Affects how vertical margins between adjacent elements are handled.
+- When 2 adjacent elements have margins that touch or overlap, the margins collapse into a single margin, which is equal to the **larger** of the 2 margins.
