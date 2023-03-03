@@ -12,6 +12,15 @@ body {
   border-top: 10px solid #1098ad;
 }
 
+.container {
+  /* specify width of container */
+  width: 800px;
+  /* to center the container */
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
