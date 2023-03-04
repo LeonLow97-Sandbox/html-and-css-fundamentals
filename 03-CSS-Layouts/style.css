@@ -2,6 +2,7 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
@@ -14,7 +15,7 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
@@ -22,7 +23,7 @@ body {
 
 .main-header {
   background-color: #f7f7f7;
-  background-color: black;
+  /* background-color: black; */
   /* padding: 20px;
   padding-left: 40px;
   padding-right: 40px; */
@@ -49,10 +50,7 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  /* padding-top: 50px;
-  padding-bottom: 50px; */
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 
 /* SMALLER ELEMENTS */
@@ -83,6 +81,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -135,6 +134,7 @@ li:last-child {
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 body {
@@ -297,4 +297,22 @@ nav {
   content: '';
   clear: both;
   display: block;
+}
+
+article {
+  /* background-color: green; */
+  width: 825px;
+  float: left;
+}
+
+aside {
+  /* background-color: red; */
+  width: 300px;
+  float: right;
+}
+
+/* implement clear both to this */
+footer {
+  /* background-color: yellow; */
+  clear: both;
 }

@@ -219,24 +219,26 @@ h3 + p::first-line {
 #### Clearing Floats
 
 - Method 1: Specifying an empty `div` and then clear both floats.
-```css
-<div class="clear"></div>
 
-.clear {
+```css
+<div class="clear" > </div > .clear {
   clear: both;
 }
 ```
 
 - Method 2: Using `clearfix` by specifying the class on the parent element
-```css
-<header class="main-header clearfix">
 
-.clearfix::after {
-  content: '';
+```css
+<header class="main-header clearfix" > .clearfix::after {
+  content: "";
   clear: both;
   display: block;
 }
 ```
+
+### `box-sizing: border-box`
+
+<img src="./pics/box-sizing-border-box.png" />
 
 ### Flexbox
 
