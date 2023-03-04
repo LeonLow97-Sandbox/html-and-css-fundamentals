@@ -10,6 +10,16 @@ body {
   color: #444;
 }
 
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.container {
+  /* background-color: red; */
+}
+
 .product {
   border: 4px solid black;
   width: 825px;
