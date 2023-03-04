@@ -138,3 +138,20 @@ h1 {
 - They take up only as much space as their content needs but they can also have padding, margin, and border set on them, just like block-level elements.
 - `<button>, <input>, <img> and <label>`
 - **With CSS: `display: inline-block`**
+
+# CSS: Position Nodes
+
+### Normal flow
+
+- Default positioning
+- Element is **in** flow.
+- Elements are simply laid out according to their order in the HTML code.
+- **With CSS: `position: relative`**
+
+### Absolute positioning
+
+- Element is removed from the normal flow: **out** of flow
+- No impact on surrounding elements, might overlap them.
+- Use top, bottom, left or right to offset the element from its **relatively positioned container**.
+- If the parent element has `position: relative` property, can set the position of the child element with `position: absolute` inside this parent container.
+- **With CSS: `position: absolute`**
