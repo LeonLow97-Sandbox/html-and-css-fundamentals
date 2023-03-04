@@ -155,3 +155,47 @@ h1 {
 - Use top, bottom, left or right to offset the element from its **relatively positioned container**.
 - If the parent element has `position: relative` property, can set the position of the child element with `position: absolute` inside this parent container.
 - **With CSS: `position: absolute`**
+
+# Pseudo-Elements
+
+- Used to style specific parts of an element.
+- Can style parts of an element that don't actually exist in the HTML markup.
+- Denoted by 2 colons `::` before the element name.
+
+### `::before` and `::after`
+
+- Allows you to add content before or after the content of an element.
+
+```css
+/* Adding an icon or bullet point before each list item in an unordered list */
+ul li::before {
+  content: "♥️"; /* "content" is used to specify the content to be added. */
+  margin-right: 0.5em;
+}
+```
+
+### Using pseudo-elements to style other parts of an element
+
+- Can used to style the first letter or first line of a paragraph.
+
+```css
+p::first-letter {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+p::first-line {
+  font-style: italic;
+}
+```
+
+### Adjacent sibling
+
+- Inside a parent element, there are many child elements.
+- The adjacent sibling is the next child that comes after a particular child element.
+
+```css
+h3 + p::first-line {
+  color: red;
+}
+```

@@ -218,6 +218,35 @@ button {
   right: 50px;
 }
 
+/* Pseudo-element */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* Adjacent sibling selector */
+h3+p::first-line {
+  /* color: red; */
+}
+
+h2 {
+  position: relative;
+}
+
+/* Before and after pseudo-element */
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  color: #444;
+  position: absolute;
+  top: -15px;
+  right: -25px;
+}
+
 /* Resolving conflicts */
 /* #copyright {
   color: red;
