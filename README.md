@@ -199,3 +199,49 @@ h3 + p::first-line {
   color: red;
 }
 ```
+
+# Building Layouts
+
+### Layout
+
+- Layout is the way test, images and other content is placed and arranged on a webpage.
+- Layouts give the page a visual structure, into which we place our content.
+- **Building a layout**: arranging page elements into a visual structure.
+
+### Float layouts (old)
+
+- Removes the element out of the document flow.
+- Element is removed from the normal flow: **out of** flow
+- Text and inline elements will wrap around the floated element.
+- The container will **not** adjust its height to the element.
+- `float: left`, `float: right`
+
+#### Clearing Floats
+
+- Method 1: Specifying an empty `div` and then clear both floats.
+```css
+<div class="clear"></div>
+
+.clear {
+  clear: both;
+}
+```
+
+- Method 2: Using `clearfix` by specifying the class on the parent element
+```css
+<header class="main-header clearfix">
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+```
+
+### Flexbox
+
+- Modern way of laying out elements in a **1-dimensional row** without using floats. Perfect for **component layouts**.
+
+### CSS Grid
+
+- For laying out element in a fully-fledged **2-dimensional grid**. Perfect for **page layouts and complex components**.
