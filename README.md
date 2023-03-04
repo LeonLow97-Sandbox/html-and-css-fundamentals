@@ -110,3 +110,31 @@ h1 {
 
 - Affects how vertical margins between adjacent elements are handled.
 - When 2 adjacent elements have margins that touch or overlap, the margins collapse into a single margin, which is equal to the **larger** of the 2 margins.
+
+# CSS: Types of Boxes
+
+### Inline Elements
+
+- Occupies only the space **necessary for its content**.
+- Causes **no line-breaks** after or before the element.
+- Box model applies in a different way: **heights and widths do not apply**.
+- **Padding and margins** are applied **only horizontally** (left and right).
+- These elements are typically used to wrap small bits of text or other inline content, such as icons or images.
+- `<span>, <a>, <em>, and <strong>`
+- **With CSS: `display: inline`**
+
+### Block-Level Elements
+
+- Elements are formatted visually as blocks.
+- Elements occupy **100% of parent element's width, no matter the content**.
+- Elements are **stacked vertically** by default, one after another.
+- `<div>, <p>, <h1>-<h6>, and <ul>/<ol>`
+- **With CSS: `display: block`**
+  - Changing inline elements to block level elements
+
+### Inline-Block Elements
+
+- Inline-block elements are a hybrid of inline and block-level elements.
+- They take up only as much space as their content needs but they can also have padding, margin, and border set on them, just like block-level elements.
+- `<button>, <input>, <img> and <label>`
+- **With CSS: `display: inline-block`**
