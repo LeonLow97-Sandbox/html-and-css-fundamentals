@@ -253,4 +253,11 @@ h3 + p::first-line {
 
 ### CSS Grid
 
-- For laying out element in a fully-fledged **2-dimensional grid**. Perfect for **page layouts and complex components**.
+- CSS Grid is a set of CSS properties for building 2-dimensional layouts.
+- The main idea behind CSS Grid is that we divide a container element into rows and columns that can be filled with its child elements.
+- In two-dimensional contexts, CSS Grid allows us to write less nested HTML and easier-to-read CSS.
+- CSS Grid is not meant to replace flexbox! Instead, they work perfectly together.
+  - Need a 1D layout? Use flexbox.
+  - Need a 2D layout? Use CSS Grid.
+
+<img src="./pics/grid-cheatsheet.png" alt="Grid Cheatsheet" />
