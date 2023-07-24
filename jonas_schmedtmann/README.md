@@ -1,9 +1,11 @@
-## Packages
+## Packages in VSCode
 
 - Auto Rename Tag (For HTML)
 - Color Highlight (For CSS)
 - Image Preview (For HTML)
 - One Monokai Theme (For VSCode theme)
+
+# HTML
 
 ## Semantic HTML
 
@@ -22,6 +24,42 @@
 ## HTML Glyphs
 
 - [HTML Glyphs](https://css-tricks.com/snippets/html/glyphs/)
+
+# CSS
+
+## 3 Ways - Inline, Internal, and External
+
+1. Inline: `<h1 style="color:red">Hello</h1>`
+2. Internal:
+
+```html
+<head>
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+</head>
+```
+
+3. External:
+
+```html
+<head>
+  <link href="style.css" rel="stylesheet" />
+</head>
+```
+
+## Styling Text
+
+| CSS               | Description                                                   |
+| ----------------- | ------------------------------------------------------------- |
+| `font-size: 20px` | Font Size                                                     |
+| `font-family`     | Font family e.g., sans-serif                                  |
+| `text-transform`  | Make the text uppercase. E.g., `text-transform: uppercase`    |
+| `font-style`      | Can set the text to italic. E.g., `font-style: italic`        |
+| `line-height`     | To increase space between the lines. E.g., `line-height: 1.5` |
+| `text-align`      | Aligns the text. E.g., `text-align: center`                   |
 
 ## Colors in CSS
 
@@ -169,7 +207,7 @@ h1 {
 ```css
 /* Adding an icon or bullet point before each list item in an unordered list */
 ul li::before {
-  content: "♥️"; /* "content" is used to specify the content to be added. */
+  content: '♥️'; /* "content" is used to specify the content to be added. */
   margin-right: 0.5em;
 }
 ```
@@ -221,7 +259,7 @@ h3 + p::first-line {
 - Method 1: Specifying an empty `div` and then clear both floats.
 
 ```css
-<div class="clear" > </div > .clear {
+<div class='clear' > </div > .clear {
   clear: both;
 }
 ```
@@ -229,8 +267,8 @@ h3 + p::first-line {
 - Method 2: Using `clearfix` by specifying the class on the parent element
 
 ```css
-<header class="main-header clearfix" > .clearfix::after {
-  content: "";
+<header class='main-header clearfix' > .clearfix::after {
+  content: '';
   clear: both;
   display: block;
 }
