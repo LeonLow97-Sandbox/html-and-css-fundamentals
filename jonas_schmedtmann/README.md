@@ -60,18 +60,26 @@
 | `font-style`      | Can set the text to italic. E.g., `font-style: italic`        |
 | `line-height`     | To increase space between the lines. E.g., `line-height: 1.5` |
 | `text-align`      | Aligns the text. E.g., `text-align: center`                   |
+| `font-weight`     | Can make text bold. E.g., `font-weight: bold`                 |
+
+## Styling Lists
+
+| CSS          | Description                                                             |
+| ------------ | ----------------------------------------------------------------------- |
+| `list-style` | Remove bullet points by adding this to `<ul>`. E.g., `list-style: none` |
 
 ## Colors in CSS
 
-- White: RGB(255, 255, 255)
-- Black: RGB(0,0,0)
+---
 
 #### RGB Notation
 
-- Regular RGB Model
-  - rgb(0, 255, 255)
-- RGB with transparency ('alpha')
-  - rgb(0, 255, 255, 0.3)
+- White: rgb(255, 255, 255)
+- Black: rgb(0,0,0)
+- Regular RGB Model: rgb(0, 255, 255)
+- RGB with transparency ('alpha'): rgb(0, 255, 255, 0.3)
+
+---
 
 #### Hexadecimal Notation
 
@@ -79,7 +87,9 @@
   - #00ffff
 - Shorthand, when all colors are identical pairs.
   - #0ff
-- In practice, we use hexadecimal Notation unless we need transparency then use rgb
+- In practice, we use hexadecimal Notation **unless we need transparency then use rgb**
+
+---
 
 #### Shades of grey
 
@@ -90,7 +100,126 @@
   - rgb(183,183,183), #b7b7b7
   - rgb(255,255,255), #ffffff, #fff
 
-# Conflicts between Selectors
+---
+
+| CSS                | Description                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| `background-color` | Background color of an element.                                |
+| `border`           | Accepts multiple values (shorthand). E.g., `5px solid #1098ad` |
+
+---
+
+## Selectors
+
+---
+
+#### Combining Selectors
+
+```css
+/* List selector */
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+}
+
+/* Descendant Selector */
+footer p {
+  font-size: 16px;
+}
+```
+
+---
+
+#### Class and ID Selectors
+
+```css
+/* ID */
+#author {
+  font-style: italic;
+}
+
+/* Class */
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+```
+
+---
+
+#### Pseudo-Classes
+
+- Styling the first element. E.g., for `<li>` elements
+
+```css
+/* First child of its parent element */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+}
+
+/* Target specific child --> 2nd child */
+li:nth-child(2) {
+}
+
+/* Target odd and even elements (can be used to style table rows) */
+li:nth-child(odd) {
+}
+li:nth-child(even) {
+}
+
+/* Does not work if <p> is not the first child of <article> ! 
+   Let's say if a <div> comes after <article> ... */
+article p:first-child {
+  color: red;
+}
+```
+
+---
+
+#### Style Hyperlinks (with pseudo-class)
+
+```cs
+/* Not a good practice. Will also work if <a> element does not have `href` attribute */
+a {
+  color: #1098ad;
+}
+
+/* Better practice. Will work if <a> element has the `href` attribute */
+a:link {
+  color: #1098ad;
+  text-decoration: none; /* get rid of the underline in links */
+}
+
+/* Giving the visited links a color */
+a:visited {
+  color: #777;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline;
+  // text-decoration: underline wavy orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+/* Arrange the above pseudo classes in order. LVHA (link --> visited --> hover --> active) */
+```
+
+---
+
+#### Conflicts between Selectors
 
 - When there are multiple selectors targeting the same element, all of them are applied but which has the highest priority?
 
@@ -101,20 +230,23 @@ Highest Priority
   3. ID (#) Selector
   4. Class (.) or pseudo-class (:) selector
   5. Element selector (p, div, li, etc.)
-  6. Universal selector (\*)
+  6. Universal selector (*)
 Lowest Priority
 ```
 
-# How Inheritance Works?
+---
 
-- Not all properties get inherited. It is mostly the ones **lated to text**: font-family, font-size, font-weight, font-size, ...
+#### How Inheritance Works?
+
+- Not all properties get inherited. It is mostly the ones **related to text**: font-family, font-size, font-weight, font-style, color, line-height, letter-spacing, text-align, text-transform, text-shadow, list-style, etc.
 
 ```css
 body {
   color: #444444;
+  font-family: sans-serif;
 }
 
-/* Overrides the inherited style of #444 */
+/* Overrides the inherited style of #444 in body */
 h1 {
   color: #1098ad;
 }
@@ -125,6 +257,18 @@ h1 {
   <h1>My Website</h1>
 </body>
 ```
+
+---
+#### Universal Selector
+
+- Selects every single element on the page. Not just those related to *text*.
+
+```css
+* {
+  
+}
+```
+---
 
 ## CSS Box Model
 
