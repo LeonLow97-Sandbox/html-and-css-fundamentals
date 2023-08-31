@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page {
+            width: 210mm;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 30mm;
+            box-sizing: border-box;
+            padding: 30mm;
+            /* Adding 30mm padding to create a margin-like effect */
+            display: flex;
+            flex-direction: column;
+            min-height: 297mm;
+            /* Minimum A4 height */
+            position: relative;
+            /* Make the .page container relative */
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .content {
+            flex-grow: 1;
+            /* Allow content to expand and push footer down */
+        }
+
+        footer {
+            font-size: 12px;
+            text-align: left;
+            color: #999;
+            margin-top: 25px;
+        }
+
+        /* Print-specific adjustments */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .page {
+                margin: 0;
+                padding: 10mm;
+                box-shadow: none;
+            }
+
+            .content {
+                flex-grow: 1;
+                margin-bottom: 0;
+                /* Remove margin-bottom for the last paragraph */
+            }
+
+            .content footer {
+                display: block;
+                /* Display the footer within the content div */
+                position: absolute;
+                /* Position the footer within the content */
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .page:last-child footer {
+                /* Display footer on the last printed page */
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .page-break {
+                margin: 15px 0;
+                page-break-before: always;
+            }
+
+            .page-break:first-of-type {
+                page-break-before: avoid;
+            }
+        }
+    </style>
+    <title>User Accounts Review</title>
+</head>
+
+<body>
+    <div class="page">
+        <h1>User Accounts</h1>
+        <div class="content">
+
+            <section>
+                <div>Using a section tag to contain these divs somehow works with page break first-of-type</div>
+                <div>div2</div>
+                <div>div3</div>
+                <div>div4</div>
+            </section>
+
+            <section>
+                <em>Hello World</em>
+            </section>
+
+            <div class="page-break">The start of the table and page break.</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sample Header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sample Description</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="page-break">The start of the table and page break.</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sample Header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sample Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+            <div class="footer-section">This is a Sample Footer</div>
+            <div class="footer-section">This is a Sample Footer</div>
+            <div class="footer-section">This is a Sample Footer</div>
+            <div class="footer-section">This is a Sample Footer</div>
+            <div class="footer-section">This is a Sample Footer</div>
+        </footer>
+    </div>
+</body>
+
+</html>
