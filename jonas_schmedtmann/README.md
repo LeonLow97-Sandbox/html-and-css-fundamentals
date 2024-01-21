@@ -385,7 +385,7 @@ h3 + p::first-line {
 
 # Building Layouts
 
-### Layout
+## Layout
 
 - Layout is the way test, images and other content is placed and arranged on a webpage.
 - Layouts give the page a visual structure, into which we place our content.
@@ -399,7 +399,7 @@ h3 + p::first-line {
   - Grid
     - Good for 2-dimensional grids. Perfect for page and component layouts.
 
-### Float layouts (old websites)
+## Float layouts (old websites)
 
 - Removes the element out of the document flow like `position: absolute`
 - Element is removed from the normal flow: **out of** flow
@@ -408,7 +408,7 @@ h3 + p::first-line {
   - Solution: Clear floats
 - `float: left`, `float: right`
 
-#### Clearing Floats
+### Clearing Floats
 
 - **Method 1**: Adding an empty `div` element as the last child and then clear both floats.
 
@@ -488,7 +488,7 @@ We also need to specify some content when using `::after`
 - Final Element Width = width
 - Final Element Height = height
 
-### Flexbox
+## Flexbox
 
 <img src="./pics/flex-box-vs-flex-item.png" alt="flex box and flex items cheatsheet">
 
@@ -520,9 +520,10 @@ We also need to specify some content when using `::after`
 - **Shorthand Property**, we use `flex: 1` to define the above 3 properties. 
   - `flex: 0 0 200px` means `flex-grow: 0`, `flex-shrink: 0`, `flex-basis: 200px`
 
-### CSS Grid
+## CSS Grid
 
-- CSS Grid is a set of CSS properties for building 2-dimensional layouts.
+- In CSS Grid, we have Grid Container and Grid Items.
+- CSS Grid is a set of CSS properties for building **2-dimensional layouts**.
 - The main idea behind CSS Grid is that we divide a container element into rows and columns that can be filled with its child elements.
 - In two-dimensional contexts, CSS Grid allows us to write less nested HTML and easier-to-read CSS.
 - CSS Grid is not meant to replace flexbox! Instead, they work perfectly together.
@@ -530,3 +531,96 @@ We also need to specify some content when using `::after`
   - Need a 2D layout? Use CSS Grid.
 
 <img src="./pics/grid-cheatsheet.png" alt="Grid Cheatsheet" />
+
+### `grid-template-columns` and `grid-template-rows`
+
+- `grid-template-columns` defines the columns of the grid
+  - `grid-template-columns: 200px 200px 100px 100px;` specifies **4 columns** with widths of 200px, 200px, 100px and 100px.
+- `grid-template-rows` defines the rows of the grid
+  - `grid-template-rows: 300px 200px;` specifies **two rows** with heights of 300px, 200px
+
+### `gap`, `column-gap` and `row-gap`
+
+- `gap` is a **shorthand** property for specifying the gap between columns and rows in a grid layout.
+- `column-gap: 30px;` sets the gap between columns to 30px.
+- `row-gap: 60px;` sets the gap between rows to 60px;
+
+### Using `fr` instead of `px`
+
+```css
+grid-template-columns: 2fr 2fr 1fr 1fr;
+grid-template-rows: 3fr 2fr;
+```
+
+- Using `fr` (fractional unit) in CSS Grid instead of `px` is about creating more flexible and **responsive** layouts.
+- `px` created fixed dimensions while `fr` fills up the container.
+- If you resize the browser window, the grid items will resize too.
+
+```css
+grid-template-columns: 1fr 1fr 1fr auto;
+```
+
+- `grid-template-columns: 1fr 1fr 1fr auto;` means the first 3 columns will have 1 fractional unit and the last column will have just sufficient width to fill its content.
+
+
+```css
+/* Shorter syntax */
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-columns: repeat(4, 1fr);
+```
+
+- `fr` unit is usually more common for `grid-template-rows`
+
+### Grid Items `grid-column` and `grid-row`
+
+```css
+.el--8 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.el--8 {
+  grid-column: 2;
+  grid-row: 1;
+}
+```
+
+- In grid systems, the columns and rows are numbered.
+- `grid-column` defines the placement of the grid item along the **horizontal axis (columns)**.
+  - `grid-column: 2 / 3;` the items starts at the second grid line and ends at the third grid line.
+  - `grid-column: 1 / -1;`: `-1` indicates that it ends at the last column, it is a convenient shorthand in grid layouts for "last" column.
+- `grid-row` defines the placement of the grid item alone the **vertical axis (rows)**.
+  - `grid-row: 1 / 2;` the item starts at the first grid line and ends at the second grid line.
+- If the difference is only by 1 like `grid-row: 2 / 3;`, we can just use `grid-row: 2`. They are the same.
+- `grid-column: 1 / 4;` is the same as `grid-column: 1 / span 3;` where it spans across 3 columns.
+
+### Aligning Grid Items and Tracks
+
+```css
+.grid-container {
+/* 
+Aligning tracks inside container: 
+distribute empty space 
+*/
+justify-content: center;
+/* justify-content: space-between; */
+align-content: center;
+
+/* 
+Aligning items INSIDE cells: 
+moving items around inside cells 
+*/
+align-items: center;
+justify-items: center;
+}
+
+.el--3 {
+align-self: end;
+justify-self: end;
+}
+```
+
+- Happens when the grid container is bigger than the grid items.
+- `align-content: center;` and `justify-content: center` centers the tracks of the entire grid.
+- `align-items: center` and `justify-items: center` centers the items inside the grid cells vertically and horizontally respectively.
+- `align-self: end` and `justify-self: end` aligns the individual grid cell to the end of the cell vertically and horizontally respectively.
