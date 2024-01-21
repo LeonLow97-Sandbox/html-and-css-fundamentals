@@ -490,14 +490,35 @@ We also need to specify some content when using `::after`
 
 ### Flexbox
 
+<img src="./pics/flex-box-vs-flex-item.png" alt="flex box and flex items cheatsheet">
+
 - Flexbox is a set of related **CSS properties** for **building 1-dimensional layouts**.
 - The main idea behind flexbox is that empty space inside a container element can be **automatically divided** by its child elements.
 - Flexbox makes it easy to automatically **align items to one another** inside a parent container, both horizontally and vertically.
 - Flexbox solves common problems such as **vertical centering** and creating **equal-height columns**.
 - Flexbox is perfect for **replacing floats**, allowing us to write fewer and cleaner HTML and CSS code.
 - To create a flex container: `display: flex`, child elements become the flex items.
+- `justify-content` is for main-axis (horizontal) and `align-items` is for cross-axis (vertical)
+- `align-self` aligns individual flex items
+- `order` to align the position of flex item, by default it is `order: 0`.
+- `gap` in flex container to separate flex items
 
-<img src="./pics/flex-box-vs-flex-item.png" alt="flex box and flex items cheatsheet">
+### `flex-grow`, `flex-shrink`, `flex-basis`
+
+```css
+/* DEFAULT */
+.el--1 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+```
+
+- `flex-basis` sets a width to the flex items in the container. It will shrink as you resize the browser to fit the flex container and this width changes because `flex-shrink: 1`
+- `flex-shrink: 0` will prevent resizing the flex items when you resize the browser but then the flex items will not fit the container and overflow the container. `flex-shrink` is to determine whether flexbox is allowed to shrink the items or not.
+- `flex-grow: 1;` to fill up the remaining spaces that are not occupied in the container. Can either set this to the flex container or flex item. Setting `flex-grow` in the flex container will make all the flex items have the same size.
+- **Shorthand Property**, we use `flex: 1` to define the above 3 properties. 
+  - `flex: 0 0 200px` means `flex-grow: 0`, `flex-shrink: 0`, `flex-basis: 200px`
 
 ### CSS Grid
 
