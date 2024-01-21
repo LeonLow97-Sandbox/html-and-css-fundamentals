@@ -259,15 +259,16 @@ h1 {
 ```
 
 ---
+
 #### Universal Selector
 
-- Selects every single element on the page. Not just those related to *text*.
+- Selects every single element on the page. Not just those related to _text_.
 
 ```css
 * {
-  
 }
 ```
+
 ---
 
 ## CSS Box Model
@@ -388,30 +389,82 @@ h3 + p::first-line {
 
 - Layout is the way test, images and other content is placed and arranged on a webpage.
 - Layouts give the page a visual structure, into which we place our content.
-- **Building a layout**: arranging page elements into a visual structure.
+- **Building a layout**: arranging page elements into a visual structure, instead of simply having them placed one after another (normal flow).
+- Page layout vs Component layout
+  - Components themselves also need to have layouts within themselves
+- 3 Ways of building layouts
+  - Float layouts
+  - Flex Box
+    - Good for laying out 1-dimensional row. Perfect for component layouts
+  - Grid
+    - Good for 2-dimensional grids. Perfect for page and component layouts.
 
-### Float layouts (old)
+### Float layouts (old websites)
 
-- Removes the element out of the document flow.
+- Removes the element out of the document flow like `position: absolute`
 - Element is removed from the normal flow: **out of** flow
 - Text and inline elements will wrap around the floated element.
-- The container will **not** adjust its height to the element.
+- The container will **not** adjust its height to the child element that has float applied to it.
+  - Solution: Clear floats
 - `float: left`, `float: right`
 
 #### Clearing Floats
 
-- Method 1: Specifying an empty `div` and then clear both floats.
+- **Method 1**: Adding an empty `div` element as the last child and then clear both floats.
+
+```html
+<header class="main-header">
+  <h1>📘 The Code Magazine</h1>
+
+  <nav>
+    <!-- <strong>This is the navigation</strong> -->
+    <a href="blog.html">Blog</a>
+    <a href="#">Challenges</a>
+    <a href="#">Flexbox</a>
+    <a href="#">CSS Grid</a>
+  </nav>
+
+  <div class="clear"></div>
+</header>
+```
 
 ```css
-<div class='clear' > </div > .clear {
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clear {
   clear: both;
 }
 ```
 
-- Method 2: Using `clearfix` by specifying the class on the parent element
+- **Method 2**: Using `clearfix` by specifying the class on the parent element
+
+```html
+<header class="main-header clearfix">
+  <h1>📘 The Code Magazine</h1>
+
+  <nav>
+    <!-- <strong>This is the navigation</strong> -->
+    <a href="blog.html">Blog</a>
+    <a href="#">Challenges</a>
+    <a href="#">Flexbox</a>
+    <a href="#">CSS Grid</a>
+  </nav>
+</header>
+```
 
 ```css
-<header class='main-header clearfix' > .clearfix::after {
+/* 
+use pseudo elements `::after` which creates a content on the last child element. 
+When using pseudo elements, it applies to inline elements, so we need `display: block
+We also need to specify some content when using `::after`
+*/
+.clearfix::after {
   content: '';
   clear: both;
   display: block;
@@ -421,6 +474,19 @@ h3 + p::first-line {
 ### `box-sizing: border-box`
 
 <img src="./pics/box-sizing-border-box.png" />
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
+- By default, when you set the width and height of an element using CSS, those values only apply to the content of the element and do not include the padding and border.
+- When you set it to `border-box`, the specified width and height include the content, padding and border of the element.
+- Final Element Width = width
+- Final Element Height = height
 
 ### Flexbox
 
