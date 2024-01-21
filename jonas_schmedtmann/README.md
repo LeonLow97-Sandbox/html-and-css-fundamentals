@@ -491,6 +491,7 @@ We also need to specify some content when using `::after`
 ## Flexbox
 
 <img src="./pics/flex-box-vs-flex-item.png" alt="flex box and flex items cheatsheet">
+<img src="./pics/flexbox-1.png" alt="flex box and flex items cheatsheet">
 
 - Flexbox is a set of related **CSS properties** for **building 1-dimensional layouts**.
 - The main idea behind flexbox is that empty space inside a container element can be **automatically divided** by its child elements.
@@ -517,7 +518,7 @@ We also need to specify some content when using `::after`
 - `flex-basis` sets a width to the flex items in the container. It will shrink as you resize the browser to fit the flex container and this width changes because `flex-shrink: 1`
 - `flex-shrink: 0` will prevent resizing the flex items when you resize the browser but then the flex items will not fit the container and overflow the container. `flex-shrink` is to determine whether flexbox is allowed to shrink the items or not.
 - `flex-grow: 1;` to fill up the remaining spaces that are not occupied in the container. Can either set this to the flex container or flex item. Setting `flex-grow` in the flex container will make all the flex items have the same size.
-- **Shorthand Property**, we use `flex: 1` to define the above 3 properties. 
+- **Shorthand Property**, we use `flex: 1` to define the above 3 properties.
   - `flex: 0 0 200px` means `flex-grow: 0`, `flex-shrink: 0`, `flex-basis: 200px`
 
 ## CSS Grid
@@ -531,6 +532,8 @@ We also need to specify some content when using `::after`
   - Need a 2D layout? Use CSS Grid.
 
 <img src="./pics/grid-cheatsheet.png" alt="Grid Cheatsheet" />
+<img src="./pics/grid-1.png" alt="flex box and flex items cheatsheet">
+<img src="./pics/grid-2.png" alt="flex box and flex items cheatsheet">
 
 ### `grid-template-columns` and `grid-template-rows`
 
@@ -562,7 +565,6 @@ grid-template-columns: 1fr 1fr 1fr auto;
 
 - `grid-template-columns: 1fr 1fr 1fr auto;` means the first 3 columns will have 1 fractional unit and the last column will have just sufficient width to fill its content.
 
-
 ```css
 /* Shorter syntax */
 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -572,6 +574,8 @@ grid-template-columns: repeat(4, 1fr);
 - `fr` unit is usually more common for `grid-template-rows`
 
 ### Grid Items `grid-column` and `grid-row`
+
+<img src="./pics/grid-numbering.png" alt="flex box and flex items cheatsheet">
 
 ```css
 .el--8 {
@@ -598,25 +602,25 @@ grid-template-columns: repeat(4, 1fr);
 
 ```css
 .grid-container {
-/* 
+  /* 
 Aligning tracks inside container: 
 distribute empty space 
 */
-justify-content: center;
-/* justify-content: space-between; */
-align-content: center;
+  justify-content: center;
+  /* justify-content: space-between; */
+  align-content: center;
 
-/* 
+  /* 
 Aligning items INSIDE cells: 
 moving items around inside cells 
 */
-align-items: center;
-justify-items: center;
+  align-items: center;
+  justify-items: center;
 }
 
 .el--3 {
-align-self: end;
-justify-self: end;
+  align-self: end;
+  justify-self: end;
 }
 ```
 
