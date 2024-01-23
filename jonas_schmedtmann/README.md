@@ -521,6 +521,14 @@ We also need to specify some content when using `::after`
 - **Shorthand Property**, we use `flex: 1` to define the above 3 properties.
   - `flex: 0 0 200px` means `flex-grow: 0`, `flex-shrink: 0`, `flex-basis: 200px`
 
+### `flex-direction`
+
+- `flex-direction: column`
+  - the main-axis (horizontal) now becomes vertical axis
+  - `align-items` aligns items horizontally, no longer vertically.
+  - `justify-content` aligns items vertically, no longer horizontally.
+  - `gap` acts like **margin-bottom**, no longer like margin-right.
+
 ## CSS Grid
 
 - In CSS Grid, we have Grid Container and Grid Items.
