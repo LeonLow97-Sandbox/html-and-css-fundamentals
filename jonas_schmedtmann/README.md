@@ -636,3 +636,18 @@ moving items around inside cells
 - `align-content: center;` and `justify-content: center` centers the tracks of the entire grid.
 - `align-items: center` and `justify-items: center` centers the items inside the grid cells vertically and horizontally respectively.
 - `align-self: end` and `justify-self: end` aligns the individual grid cell to the end of the cell vertically and horizontally respectively.
+
+# Layouts and Components
+
+### `transform`
+
+- `transform: scale(1.5);`
+  - `scale(1)` is the default size of the image.
+  - can scale img and make it overflow its component
+
+### Vertical Centering with `position: absolute` and `transform`
+
+- use `translate`
+- `transform: translate(0, -50%);`
+  - `0` means 0 translation in the x-axis
+  - `-50%` translates to moving up 50% of the actual element's height
