@@ -651,3 +651,23 @@ moving items around inside cells
 - `transform: translate(0, -50%);`
   - `0` means 0 translation in the x-axis
   - `-50%` translates to moving up 50% of the actual element's height
+
+### `margin: 0 auto`
+
+- `margin: 0 auto` centering of div elements only works if you define a width on the component.
+
+### Selector Specificity
+
+- Adding 2 classes together increases the specificity.
+
+```css
+.page-link:hover,
+.page-link:active,
+.page-link.page-link--current {
+    background-color: #087f5b;
+    color: white;
+}
+```
+
+- `.page-link.page-link--current` adding 2 classes like this increases the specificity.
+- To see the specificity, hover over the css class in `<style>`
