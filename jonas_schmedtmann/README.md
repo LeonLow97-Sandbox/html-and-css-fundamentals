@@ -664,10 +664,24 @@ moving items around inside cells
 .page-link:hover,
 .page-link:active,
 .page-link.page-link--current {
-    background-color: #087f5b;
-    color: white;
+  background-color: #087f5b;
+  color: white;
 }
 ```
 
 - `.page-link.page-link--current` adding 2 classes like this increases the specificity.
 - To see the specificity, hover over the css class in `<style>`
+
+### Viewport height `vh`
+
+- `height: 100vh` sets viewport height to 100%
+- `vw` is viewport width but we rarely use that
+
+### Adding background images
+
+```css
+background-image: linear-gradient(rgba(34,34,34,0.6), rgba(34,34,34,0.6)), url(hero.jpg);
+background-size: cover;
+```
+
+- `background-size: cover` will cover the entire page.
