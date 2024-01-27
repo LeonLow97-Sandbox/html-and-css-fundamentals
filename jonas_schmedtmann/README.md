@@ -685,3 +685,8 @@ background-size: cover;
 ```
 
 - `background-size: cover` will cover the entire page.
+
+### `overflow: scroll`
+
+- `overflow: scroll`: allows scrolling in the container for elements that don't fit in the container.
+- If using flex, the flex items will shrink as `flex-shrink: 1` by default. Set `flex-shrink: 0;` to disable shrinking on flex items.`
