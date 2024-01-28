@@ -680,7 +680,8 @@ moving items around inside cells
 ### Adding background images
 
 ```css
-background-image: linear-gradient(rgba(34,34,34,0.6), rgba(34,34,34,0.6)), url(hero.jpg);
+background-image: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6)),
+  url(hero.jpg);
 background-size: cover;
 ```
 
@@ -690,3 +691,63 @@ background-size: cover;
 
 - `overflow: scroll`: allows scrolling in the container for elements that don't fit in the container.
 - If using flex, the flex items will shrink as `flex-shrink: 1` by default. Set `flex-shrink: 0;` to disable shrinking on flex items.`
+
+# Project
+
+## 7 Steps to a Great Website
+
+1. Define
+2. Plan
+3. Sketch
+4. Design and Build
+5. Test and Optimize
+6. Launch
+7. Maintain and Update
+
+<img src="./pics/step-1-good-website.png" />
+<img src="./pics/step-2-good-website.png" />
+<img src="./pics/step-3-good-website.png" />
+<img src="./pics/step-4-good-website.png" />
+<img src="./pics/step-5-good-website.png" />
+<img src="./pics/step-6-good-website.png" />
+<img src="./pics/step-7-good-website.png" />
+
+## Responsive Design Principles
+
+- Design technique to make a webpage adjust its layout and visual style to **any possible screen size** (window or viewport size),
+- Usable on all devices, such as desktop computers, tablets and mobile phones.
+
+### `max-width` vs `width`
+
+- `max-width`
+  - if the container width is larger than the specified `max-width`, then the width of the element is equal the value that was specified was `max-width`
+  - if the container width is less than the specified `max-width`, then the width of the element is 100% of the container element width.
+- removes horizontal scrolling
+
+### `rem`
+
+- root element font size
+- root is `html` element. if we don't define any root font size, it will be the default browser font-size (**1 rem = 16px**).
+- useful for responsive designs. usually we set `font-size: 10px;` for easy calculations where 1rem is 10px.
+
+```css
+html {
+  font-size: 10px;
+}
+
+.test {
+  /* 1 rem = 10px --> 40rem */
+  padding: 4rem;
+}
+```
+
+- Use exactly `font-size: 62.5%`
+
+```css
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+}
+```
