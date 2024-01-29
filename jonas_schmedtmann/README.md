@@ -751,3 +751,49 @@ html {
   font-size: 62.5%;
 }
 ```
+
+### Creating a reusable grid
+
+- to make them reusable across our page
+
+```css
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+```
+
+### Adding before pseudo element
+
+```css
+.step-img-box::before {
+    content: "";
+    display: block;
+    width: 60%;
+    /* height: 60%; */
+
+    /* 60% of parent's width */
+    padding-bottom: 60%;
+    background-color: #fdf2e9;
+}
+```
+
+### `filter` and `opacity` for `img`
+
+```css
+.logos img {
+    height: 3.2rem;
+    filter: grayscale(100%);
+
+    filter: brightness(0%);
+    opacity: 50%;
+}
+```
