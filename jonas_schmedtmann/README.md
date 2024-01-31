@@ -775,25 +775,63 @@ html {
 
 ```css
 .step-img-box::before {
-    content: "";
-    display: block;
-    width: 60%;
-    /* height: 60%; */
+  content: '';
+  display: block;
+  width: 60%;
+  /* height: 60%; */
 
-    /* 60% of parent's width */
-    padding-bottom: 60%;
-    background-color: #fdf2e9;
+  /* 60% of parent's width */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
 }
 ```
+
+## Images
 
 ### `filter` and `opacity` for `img`
 
 ```css
 .logos img {
-    height: 3.2rem;
-    filter: grayscale(100%);
+  height: 3.2rem;
+  filter: grayscale(100%);
 
-    filter: brightness(0%);
-    opacity: 50%;
+  filter: brightness(0%);
+  opacity: 50%;
+}
+```
+
+### Making images shift up
+
+```css
+.meal {
+    box-shadow: 0 2.4rem 4.8rem rgba(0,0,0,0.075);
+    border-radius: 11px;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.meal:hover {
+    transform: translateY(-1.2rem);
+    box-shadow: 0 3.2rem 6.4rem rgba(0,0,0,0.06);
+}
+
+```
+
+### Making images zoom in
+
+```css
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    /* block to get rid of spacing between images */
+    display: block;
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
 }
 ```
