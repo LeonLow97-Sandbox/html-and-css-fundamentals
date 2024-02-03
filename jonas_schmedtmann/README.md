@@ -835,3 +835,11 @@ html {
     transform: scale(1.1);
 }
 ```
+
+### Adding css properties to elements that are not the last child
+
+```css
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+}
+```
