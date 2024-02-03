@@ -683,6 +683,9 @@ moving items around inside cells
 background-image: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6)),
   url(hero.jpg);
 background-size: cover;
+
+/* background gradient */
+background-image: linear-gradient(to right bottom, red, #e67e22);
 ```
 
 - `background-size: cover` will cover the entire page.
@@ -841,5 +844,54 @@ html {
 ```css
 .grid:not(:last-child) {
     margin-bottom: 9.6rem;
+}
+```
+
+### Sizing background images in CSS
+
+- Need to use `background-size: cover;` for css images.
+- For HTML `<img>` tags, use `width: 100%;` to size the images in the container.
+
+```css
+.cta-img-box {
+    background-image: url('../img/eating.jpg');
+    background-size: cover;
+}
+```
+
+### `inherit`
+
+- force the element to inherit the style of the parent element
+- by default, `<input>` or `<select>` elements color are not inherited and by default has `color: black`
+
+```css
+.cta-form input {
+    font-family: inherit;
+    color: inherit;
+}
+```
+
+### Styling input placeholder
+
+```css
+.cta-form input::placeholder {
+    color: #aaa;
+}
+```
+
+### Focus and Accessibility State
+
+```css
+*:focus {
+    outline: none;
+    /* outline: 4px dotted #e67e22;
+    outline-offset: 8px; */
+    box-shadow: 0 0 0 0.8rem rgba(230,125,34,0.5);
+}
+
+/* Style it on a specific component */
+.cta-form *:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.8rem rgba(253,242,233,0.5);
 }
 ```
