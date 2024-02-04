@@ -807,35 +807,34 @@ html {
 
 ```css
 .meal {
-    box-shadow: 0 2.4rem 4.8rem rgba(0,0,0,0.075);
-    border-radius: 11px;
-    overflow: hidden;
-    transition: all 0.4s;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
 }
 
 .meal:hover {
-    transform: translateY(-1.2rem);
-    box-shadow: 0 3.2rem 6.4rem rgba(0,0,0,0.06);
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 }
-
 ```
 
 ### Making images zoom in
 
 ```css
 .gallery-item {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .gallery-item img {
-    /* block to get rid of spacing between images */
-    display: block;
-    width: 100%;
-    transition: all 0.4s;
+  /* block to get rid of spacing between images */
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 ```
 
@@ -843,7 +842,7 @@ html {
 
 ```css
 .grid:not(:last-child) {
-    margin-bottom: 9.6rem;
+  margin-bottom: 9.6rem;
 }
 ```
 
@@ -854,8 +853,8 @@ html {
 
 ```css
 .cta-img-box {
-    background-image: url('../img/eating.jpg');
-    background-size: cover;
+  background-image: url('../img/eating.jpg');
+  background-size: cover;
 }
 ```
 
@@ -866,8 +865,8 @@ html {
 
 ```css
 .cta-form input {
-    font-family: inherit;
-    color: inherit;
+  font-family: inherit;
+  color: inherit;
 }
 ```
 
@@ -875,7 +874,7 @@ html {
 
 ```css
 .cta-form input::placeholder {
-    color: #aaa;
+  color: #aaa;
 }
 ```
 
@@ -883,15 +882,69 @@ html {
 
 ```css
 *:focus {
-    outline: none;
-    /* outline: 4px dotted #e67e22;
+  outline: none;
+  /* outline: 4px dotted #e67e22;
     outline-offset: 8px; */
-    box-shadow: 0 0 0 0.8rem rgba(230,125,34,0.5);
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 }
 
 /* Style it on a specific component */
 .cta-form *:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.8rem rgba(253,242,233,0.5);
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
 }
 ```
+
+## Responsive Design
+
+### Media Queries
+
+```css
+@media (max-width: 1200px) {
+  .section-hero {
+    background-color: orangered;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-hero {
+    border: 20px dashed blue;
+    background-color: blue;
+  }
+}
+```
+
+### Breakpoints
+
+- pixel values set in media queries
+- set breakpoints when design breaks down. put breakpoints when design looks weird / breaks.
+
+```html
+<!-- important meta tag for responsive web design -->
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+```
+
+### Selecting html based o attributes in css
+
+```html
+<ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+```
+
+```css
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+```
+
+### Pseudo Selector Order
+
+```css
+.step-img-box:nth-child(2) {
+    
+}
+```
+
+- `nth:child(2)` is the order which this element is within the parent container.
+- the class name `step-img-box` has nothing to do with the order of this element in the parent container.
